@@ -1,0 +1,36 @@
+Purpose:
+
+	To brighten your day at the console with a randome quote much like the
+old program fortune.
+
+Work you Must Do:
+
+	- install the Colorize Gem
+	    $ sudo gem install colorize
+
+	- download quote.rb from the repo
+
+	- add this to bashrc
+	    ruby /path/to/downloaded/script/quote.rb
+
+	- Enjoy it each time you fire up your shell
+
+Posible Modification:
+
+	- The array possible_colors on line 18 is used to pick a randome color from String.colors
+	if you fire up irb and type String.colors you can pick the ones you like and put there
+	index values in the array
+	
+	- You can pick another RSS feed though you will need to modify lines 22 and 23
+	i.e. rss.channel.fitting-tag.fitting-tag
+
+	- Also on lines 22 and 23 you can change the second argument to the wrap_text methods to
+	expand or compress the output
+
+This is my first ruby script I have posted much more to come. Please enjoy critique laugh at me
+and my spelling but most importantly be well.
+
+Updates:
+
+  2/28/12: I noticed when the network was down the script would hang for some time and then dump some ruby errors which does not brighten
+  your day at the console so it now pings google insures WAN existance and the initiates or displays a clean error message. Enjoy:)
