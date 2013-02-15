@@ -1,5 +1,4 @@
-require 'rss/1.0'
-require 'rss/2.0'
+require 'nokogiri'
 require 'open-uri'
 require 'resolv-replace'
 
@@ -19,18 +18,17 @@ end
 
 if wan?
   #Obtain rss feed of randome quote
-  source = "http://www.quotedb.com/quote/quote.php?action=random_quote_rss&=&=&" # url or local file
-  content = "" # raw content of rss feed will be loaded here
-  open(source) do |s| content = s.read end
-  rss = RSS::Parser.parse(content, false)
-
-  #Extract Data fromat and output...Any questions
-  quote = wrap_text(rss.channel.item.description, 50)
-  author = wrap_text("\n\t\t-#{rss.channel.item.title}", 50)
+  source = "http://www.quotesdaddy.com/feed" # url or local file
+	doc = Nokogiri::HTML(open(source))
+	quote_data = doc.css('description').children.first.content
+	quote_data = quote_data.split("-")
+	author = " - " + quote_data.last
+	quote_data.pop # Remove author
+	quote = quote_data.join("")
 
   #Print the lines
-  puts quote
-  puts author
+  puts wrap_text( quote, 50 )
+  puts wrap_text( author, 50 )
 else
   puts "No network connection aborting ruby quote"
 end

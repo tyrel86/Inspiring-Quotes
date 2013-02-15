@@ -9,12 +9,13 @@ Work you Must Do:
 
 	- add this to bashrc
 	    ruby /path/to/downloaded/script/quote.rb
+	
+	- gem install nokogiri
 
 	- Enjoy it each time you fire up your shell
-
-This is my first ruby script I have posted much more to come. Please enjoy critique laugh at me
-and my spelling but most importantly be well.
 
 Updates:
 
   2/28/12: The script would hang when there was no wan connection it now ping google and exits if there is no connection 
+	2/15/13: Well its been awhile. Apparently the good people at quotedb.com decided to change their api. After researching alternatives do to quotedb's somewhat latent network I found quote daddy. I moved to nokogiri for the parsing every thing else is basically the same.
+
