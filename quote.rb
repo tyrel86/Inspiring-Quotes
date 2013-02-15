@@ -27,8 +27,10 @@ if wan?
 	quote = quote_data.join("")
 
   #Print the lines
+	puts
   puts wrap_text( quote, 50 )
   puts wrap_text( author, 50 )
+	puts
 else
   puts "No network connection aborting ruby quote"
 end
