@@ -26,6 +26,11 @@ if wan?
 	quote_data.pop # Remove author
 	quote = quote_data.join("")
 
+	#<br /> to \n
+	["<br />", "<br/>", "<br>"].each do |tag|
+		quote = quote.gsub(tag, "\n")
+	end
+
   #Print the lines
 	puts
   puts wrap_text( quote, 50 )
